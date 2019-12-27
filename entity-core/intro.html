@@ -122,11 +122,11 @@ AND (FS.LastOrdered &gt;= :FromDate OR :FromDate IS NULL)
 AND (FS.LastOrdered &lt;= :ToDate OR :ToDate IS NULL)
 </code></pre>
 <p>All keys, including the <code>:primary</code>, return instances of the entity only. Any aggregations with other domain data types should be expressed by associating related instance(s) via their position in a dynamically constructed data graph.</p>
-<p>By default, key field values are nil. <code>typeops</code> is used to enforce the correct types for field values set its definition of <code>assoc</code>.</p>
+<p>By default, key field values are nil. <code>typeops</code> is used to enforce the correct types for field values with its definition of <code>assoc</code>.</p>
 <pre><code class="clojure">(make-key
+    {}
     :foo/FruitSupplier
-    :filter
-    {})
+    :filter)
 =&gt;
 {:ToDate nil,
  :MaxShelfLife nil,
